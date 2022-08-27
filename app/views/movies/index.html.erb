@@ -2,8 +2,8 @@
 
 <% @movies.each do |movie| %>
     <li><strong><%= movie.title %></strong> (<%= movie.rating %>): 
-    <%= number_to_currency(movie.total_gross, precision: 0 ) %></li>
-    <p><%= movie.description %></p>
-    <p><%= movie.released_on %></p>
+        <%= total_gross(movie) %></li>
+    <p><%= truncate(movie.description, length: 40, precision: ' ' ) %></p>
+    <p><%= year_of(movie) %></p>
     
 <% end %>
