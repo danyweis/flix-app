@@ -19,6 +19,22 @@ class MoviesController < ApplicationController
     redirect_to @movie
   end
 
+  def new
+    @movie = Movie.new
+  end
+
+  def create
+    @movie = Movie.new(movie_params)
+    @movie.save
+    redirect_to @movie
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to movies_path
+  end
+
   private
   def movie_params 
     params.require(:movie).
