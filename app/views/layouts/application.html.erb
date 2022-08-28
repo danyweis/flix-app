@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flix</title>
+    <title>Flix Movies</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= image_tag 'logo' %>
+    </header>  
+    <div class="conternt">
+      <%= yield %>
+    </div>
+    <footer>
+      <p> Copyright &copy; 2010-<%= Time.now.year %> <%=link_to 'DanyCode', 'https://danyweis.com', target: '_blank' %></p>
+    </footer>
   </body>
 </html>
