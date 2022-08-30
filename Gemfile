@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bootstrap', '~> 5.2'
 gem 'bootstrap', '~> 4.3.1'
 
+gem 'net-smtp'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,6 +36,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
