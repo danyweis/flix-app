@@ -14,8 +14,24 @@ require 'rails_helper'
 # RSpec.describe MovieHelper, type: :helper do => got error because of MovieHelper and not MoviesHelper
 RSpec.describe MoviesHelper, type: :helper do
 
-  it 'returns' do
-    # need to be written
+  it 'returns Flop! if movie total_gross <= 225_000_000' do 
+    movie = Movie.create(total_gross: 225_000_000)
+
+    expect(total_gross(movie)).to eq "Flop!"
   end
+
+  it 'returns total_gross if movie total_gross > 225_000_000' do 
+    movie = Movie.create(total_gross: 225_000_001)
+
+    expect(total_gross(movie)).to eq "$225,000,001"
+  end
+
+  it 'returns the year the movie was released' do 
+    movie = Movie.create(released_on: "2016-08-30")
+
+    expect(year_of(movie)).to eq "2016"
+  end
+
+
 
 end
