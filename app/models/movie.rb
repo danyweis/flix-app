@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  #lets us delete the movie and the reviews will be deleted the same time "dependent: :destroy"
+  has_many :reviews, dependent: :destroy
 
   validates :title, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
